@@ -24,6 +24,9 @@ export default {
         // ...
         900: '#1a202c',
       },
+      pink: {
+        600: '#8C5C6A'
+      },
       indigo: {
         50: "#E8EAF6"
       },
