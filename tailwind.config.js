@@ -56,6 +56,9 @@ export default {
         "900": "900ms",
         "1100": "1100ms",
         '2000': '2000ms',
+      },
+      backgroundImage: {
+        'main-intro': "url('/src/assets/hantaran-hidden.jpg')"
       }
     },
   },

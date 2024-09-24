@@ -1,8 +1,8 @@
 
-export default function MainIntro() {
+export default function MainChoosing() {
     return (
-        <div className='main-intro'>
-            <div className='bg-white/50 flex flex-col items-center justify-center p-3 w-full h-full z-50'>
+        <div className='main-choosing'>
+            <div className='flex flex-col items-center justify-center p-3'>
                 
             </div>
         </div>
