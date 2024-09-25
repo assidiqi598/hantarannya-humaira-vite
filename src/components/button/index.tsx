@@ -8,6 +8,7 @@ interface IButton extends React.PropsWithChildren {
   additionalClassNames?: Array<string>;
   id: string;
   condition?: any;
+  onClick?: Function;
 }
 
 const Button: FC<IButton> = ({
@@ -17,6 +18,7 @@ const Button: FC<IButton> = ({
   textColor = "text-white",
   additionalClassNames = [],
   condition = {},
+  onClick = () => {}
 }) => {
   return (
     <button
@@ -28,6 +30,7 @@ const Button: FC<IButton> = ({
         additionalClassNames,
         { ...condition }
       )}
+      onClick={() => onClick()}
     >
       {children}
     </button>

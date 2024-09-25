@@ -1,4 +1,5 @@
 import "./App.css";
+import WhatsApp from "./components/whatsapp";
 import Header from "./sections/header";
 import MainChoosing from "./sections/main-choosing";
 import MainIntro from "./sections/main-intro";
@@ -8,7 +9,8 @@ import MainIntro from "./sections/main-intro";
 function App() {
   return (
     <>
-      <Header info="Get 10% off until December 2024!" />
+      <Header info="Get 10% off for order until December 2024!" />
+      <WhatsApp />
       <MainIntro />
       <MainChoosing />
     </>
