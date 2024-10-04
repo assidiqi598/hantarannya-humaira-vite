@@ -18,13 +18,13 @@ const Button: FC<IButton> = ({
   textColor = "text-white",
   additionalClassNames = [],
   condition = {},
-  onClick = () => {}
+  onClick = () => {},
 }) => {
   return (
     <button
       id={id}
       className={cn(
-        "w-36 flex flex-wrap align-center justify-center text-center px-4 py-2.5 rounded-lg",
+        "w-36 flex flex-wrap align-center justify-center text-center px-4 py-2.5 rounded-lg origin-center active:scale-95 transition-transform",
         bgColor,
         textColor,
         additionalClassNames,
