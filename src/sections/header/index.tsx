@@ -6,7 +6,7 @@ interface IHeader {
 
 const Header: FC<IHeader> = ({ info }) => {
   return (
-    <div id="header" className="bg-pink-600 fixed left-0 top-0 min-h-10 w-screen flex justify-start items-center">
+    <div id="header" className="bg-pink-600 fixed left-0 top-0 min-h-10 w-screen flex justify-start items-center z-50">
       <a href="/">
         <img
           src="/src/assets/logo.png"

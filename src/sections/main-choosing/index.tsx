@@ -15,11 +15,11 @@ export default function MainChoosing() {
   const [cloth, setCloth] = useState<Cloth | string>("");
 
   return (
-    <div
+    <section
       id="main-choosing"
-      className="flex items-start justify-center h-screen bg-pink-600 p-4"
+      className="flex items-start justify-center h-screen p-4"
     >
-      <div className="flex flex-col items-start justify-center rounded-xl bg-white/50 p-2 mt-8 w-full lg:w-1/2">
+      <div className="flex flex-col items-start justify-center rounded-xl bg-pink-200 p-2 mt-8 w-full lg:w-1/2">
         <div id="type-choosing" className="flex flex-col items-start w-full">
           <h3 className="mt-1">Choose your type</h3>
           <div className="flex items-center justify-start w-full">
@@ -59,6 +59,6 @@ export default function MainChoosing() {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 }

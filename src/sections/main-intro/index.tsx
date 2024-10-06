@@ -8,20 +8,29 @@ export default function MainIntro() {
   };
 
   return (
-    <section className="bg-main-intro bg-center bg-no-repeat bg-cover h-screen w-screen lg:w-full lg:max-h-screen lg:bg-none lg:flex">
-      <div className="bg-white/50 flex flex-col items-center justify-center p-3 w-full h-full lg:w-1/2 lg:px-0">
+    <section className="relative flex flex-col items-center justify-center h-screen w-screen bg-yellow-200 lg:w-full lg:max-h-screen">
+      <img
+        src="src/assets/main-intro-bg.svg"
+        alt="hantaran-seserahan-main-intro-bg"
+        className="hidden portrait:hidden lg:block lg:absolute lg:top-0 h-full"
+        loading="lazy"
+      />
+      <img
+        src="src/assets/hantaran-hidden.webp"
+        alt="hantaran-seserahan-hidden"
+        className="absolute left-0 right-0 mx-auto hantaran-hidden"
+        loading="lazy"
+      />
+      <div className="flex flex-col items-center justify-end p-3 w-full lg:w-1/2 lg:px-0 absolute left-0 right-0 mx-auto intro-div">
         <h1 className="main-intro-title text-6xl text-center">
           "Hantaran" specially made for you
         </h1>
-        <br />
-        <p></p>
-        <br />
-        <br />
-        <p className="text-pink-600">by HANTARANNYA HUMAIRA</p>
-        <br />
-        <br />
-        <br />
-        <Button id="main-intro-btn" bgColor="bg-pink-600" onClick={goToMainChoosing}>
+        <p className="text-pink-600 mb-5">by HANTARANNYA HUMAIRA</p>
+        <Button
+          id="main-intro-btn"
+          bgColor="bg-pink-600"
+          onClick={goToMainChoosing}
+        >
           Get Started{" "}
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -36,13 +45,6 @@ export default function MainIntro() {
             />
           </svg>
         </Button>
-      </div>
-      <div className="hidden lg:flex lg:justify-center lg:items-center lg:w-1/2">
-        <img
-          src="/src/assets/hantaran-acrylic.jpg"
-          alt="hantaran seserahan acrylic not hidden"
-          className="h-4/5 border-8 border-double border-pink-600 rounded-xl"
-        />
       </div>
     </section>
   );

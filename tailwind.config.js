@@ -7,7 +7,7 @@ export default {
   theme: {
     screens: {
       sm: '480px',
-      md: '768px',
+      md: '600px',
       lg: '976px',
       xl: '1440px',
     },
@@ -25,6 +25,7 @@ export default {
         900: '#1a202c',
       },
       pink: {
+        200: '#ffeff4',
         600: '#8C5C6A'
       },
       indigo: {
@@ -47,6 +48,9 @@ export default {
         50: "#E1F5FE",
         A400: "#00B0FF"
       },
+      yellow: {
+        200: "#fff4d4"
+      }
     },
     extend: {
       transitionDelay: {
@@ -58,7 +62,7 @@ export default {
         '2000': '2000ms',
       },
       backgroundImage: {
-        'main-intro': "url('/src/assets/hantaran-hidden.jpg')"
+        'main-intro': "url('src/assets/main-intro-bg.svg')"
       }
     },
   },
