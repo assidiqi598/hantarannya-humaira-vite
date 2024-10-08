@@ -10,13 +10,13 @@ export default function MainIntro() {
   return (
     <section className="relative flex flex-col items-center justify-center h-screen w-screen bg-yellow-200 lg:w-full lg:max-h-screen">
       <img
-        src="src/assets/main-intro-bg.svg"
+        src="assets/main-intro-bg.svg"
         alt="hantaran-seserahan-main-intro-bg"
         className="hidden portrait:hidden lg:block lg:absolute lg:top-0 h-full"
         loading="lazy"
       />
       <img
-        src="src/assets/hantaran-hidden.webp"
+        src="assets/hantaran-hidden.webp"
         alt="hantaran-seserahan-hidden"
         className="absolute left-0 right-0 mx-auto hantaran-hidden"
         loading="lazy"
