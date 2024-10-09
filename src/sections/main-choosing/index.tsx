@@ -148,7 +148,7 @@ Tambahan:
                 onChange={e => setMessage(e.target.value)}
                 value={message}
               />
-              <a href={`https://wa.me/+6289670428545?text=${urlEncodedMsg}`}>
+              <a href={`https://wa.me/+6289670428545?text=${urlEncodedMsg}`} target='_blank'>
                 <Button
                   id="btn-send-req"
                   bgColor="bg-pink-600"
