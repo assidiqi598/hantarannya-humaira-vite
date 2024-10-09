@@ -1,6 +1,6 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '../../components/button';
-import types from '../../../public/data/types.json';
+import types from '../../data/types.json';
 
 interface ITheme {
   theme: string;
@@ -17,6 +17,7 @@ export default function MainChoosing() {
   const [theme, setTheme] = useState<ITheme>();
   const [totalBox, setTotalBox] = useState<number>(0);
   const [message, setMessage] = useState<string>('');
+  const [urlEncodedMsg, setUrlEncodedMsg] = useState<string>('');
 
   useEffect(() => {
     if (type && theme) {
@@ -33,6 +34,10 @@ Tambahan:
       `);
     }
   }, [type, theme, totalBox]);
+
+  useEffect(() => {
+    setUrlEncodedMsg(encodeURI(message));
+  }, [message]);
 
   return (
     <section
@@ -89,7 +94,7 @@ Tambahan:
                 <span className="p-3 text-lg font-bold">{totalBox}</span>
                 <div className="flex flex-col items-center justify-center">
                   <div
-                    className="p-1 bg-pink-600 rounded-tr-lg origin-center active:scale-95 transition-transform"
+                    className="p-1 bg-pink-600 rounded-tr-lg cursor-pointer origin-center active:scale-95 transition-transform"
                     onClick={() => {
                       if (totalBox < type.maxTotal) {
                         setTotalBox(oldVal => oldVal + 1);
@@ -112,7 +117,7 @@ Tambahan:
                     </svg>
                   </div>
                   <div
-                    className="p-1 bg-pink-600 rounded-br-lg origin-center active:scale-95 transition-transform"
+                    className="p-1 bg-pink-600 rounded-br-lg cursor-pointer origin-center active:scale-95 transition-transform"
                     onClick={() => {
                       if (totalBox > 3) {
                         setTotalBox(oldVal => oldVal - 1);
@@ -143,7 +148,7 @@ Tambahan:
                 onChange={e => setMessage(e.target.value)}
                 value={message}
               />
-              <a href="">
+              <a href={`https://wa.me/+6289670428545?text=${urlEncodedMsg}`}>
                 <Button
                   id="btn-send-req"
                   bgColor="bg-pink-600"
