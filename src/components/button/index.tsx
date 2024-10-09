@@ -24,7 +24,7 @@ const Button: FC<IButton> = ({
     <button
       id={id}
       className={cn(
-        "w-36 flex flex-wrap align-center justify-center text-center px-4 py-2.5 rounded-lg origin-center active:scale-95 transition-transform",
+        "w-fit flex flex-wrap align-center justify-center text-center px-4 py-2.5 rounded-lg origin-center active:scale-95 transition-transform",
         bgColor,
         textColor,
         additionalClassNames,
