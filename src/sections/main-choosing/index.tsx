@@ -1,6 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, SetStateAction } from 'react';
 import Button from '../../components/button';
 import types from '../../data/types.json';
+import TextInput from '../../components/input/text';
+import DateInput from '../../components/input/date';
 
 interface ITheme {
   theme: string;
@@ -18,13 +20,20 @@ export default function MainChoosing() {
   const [totalBox, setTotalBox] = useState<number>(0);
   const [message, setMessage] = useState<string>('');
   const [urlEncodedMsg, setUrlEncodedMsg] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [bookingDate, setBookingDate] = useState<Date>(() => {
+    const currentDate = new Date();
+    return new Date(currentDate.setDate(currentDate.getDate() + 14));
+  });
 
   useEffect(() => {
-    if (type && theme) {
+    if (type && theme && name && bookingDate) {
       setMessage(`Hallo kak,
 
 Saya ingin booking hantaran dengan rincian sebagai berikut.
         
+Booking atas nama: ${name}
+Untuk tanggal: ${bookingDate.toLocaleDateString('id-ID')}
 Tipe: ${type?.type ?? ''}
 Tema: ${theme?.theme ?? ''}
 Total Hantaran: ${totalBox ?? ''}
@@ -33,7 +42,7 @@ Tambahan:
 (Silakan tulis request mu di sini)
       `);
     }
-  }, [type, theme, totalBox]);
+  }, [type, theme, totalBox, name, bookingDate]);
 
   useEffect(() => {
     setUrlEncodedMsg(encodeURI(message));
@@ -46,7 +55,23 @@ Tambahan:
     >
       <div className="flex flex-col items-start justify-center rounded-xl bg-pink-200 p-2 mt-8 w-full lg:w-1/2">
         <div id="type-choosing" className="flex flex-col items-start w-full">
-          <h3 className="mt-1">Pilih tipe hantaran</h3>
+          <h3>Booking atas nama:</h3>
+          <TextInput
+            id="requester-name"
+            onChange={(e: { target: { value: SetStateAction<string> } }) =>
+              setName(e.target.value)
+            }
+          />
+          <h3 className="mt-5">Booking atas nama:</h3>
+          <DateInput
+            id="booking-date"
+            onChange={(e: { target: { value: string } }) => {
+              console.log(e.target.value);
+              // const [y, M, d] = e.target.value.split('-');
+              setBookingDate(new Date(e.target.value));
+            }}
+          />
+          <h3 className="mt-5">Pilih tipe hantaran</h3>
           <div className="flex items-center justify-start w-full">
             {types.map(it => (
               <Button
@@ -148,7 +173,10 @@ Tambahan:
                 onChange={e => setMessage(e.target.value)}
                 value={message}
               />
-              <a href={`https://wa.me/+6289670428545?text=${urlEncodedMsg}`} target='_blank'>
+              <a
+                href={`https://wa.me/+6289670428545?text=${urlEncodedMsg}`}
+                target="_blank"
+              >
                 <Button
                   id="btn-send-req"
                   bgColor="bg-pink-600"
