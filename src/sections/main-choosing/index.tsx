@@ -58,16 +58,16 @@ Tambahan:
           <h3>Booking atas nama:</h3>
           <TextInput
             id="requester-name"
+            value={name}
             onChange={(e: { target: { value: SetStateAction<string> } }) =>
               setName(e.target.value)
             }
           />
-          <h3 className="mt-5">Booking atas nama:</h3>
+          <h3 className="mt-5">Booking untuk tanggal:</h3>
           <DateInput
             id="booking-date"
+            value={bookingDate}
             onChange={(e: { target: { value: string } }) => {
-              console.log(e.target.value);
-              // const [y, M, d] = e.target.value.split('-');
               setBookingDate(new Date(e.target.value));
             }}
           />
@@ -112,7 +112,7 @@ Tambahan:
             </>
           )}
 
-          {type && theme && (
+          {type && theme && name && isNaN(bookingDate?.getTime()) === false && (
             <>
               <h3>Total hantaran</h3>
               <div className="flex items-center justify-center rounded-lg bg-white">
