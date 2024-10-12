@@ -9,7 +9,7 @@ const Header: FC<IHeader> = ({ info }) => {
     <div id="header" className="bg-pink-600 fixed left-0 top-0 min-h-10 w-screen flex justify-start items-center z-50">
       <a href="/">
         <img
-          src="assets/logo.png"
+          src="/assets/logo.png"
           alt="hantaran seserahan hantarannya humaira"
           className="m-1 h-10 w-10"
         />

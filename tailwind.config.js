@@ -62,7 +62,7 @@ export default {
         '2000': '2000ms',
       },
       backgroundImage: {
-        'main-intro': "url('assets/main-intro-bg.svg')"
+        'main-intro': "url('/assets/main-intro-bg.svg')"
       }
     },
   },
